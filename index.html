@@ -331,32 +331,23 @@
                                 <h3>class</h3>
                                 <h3>price</h3>
                             </div>
-                            ------------------------------------------------------------------------
-                            <div class="flex space-x-2 lg:space-x-36 ">
-                                <h3 class="pl-4">C1</h3>
-                                <h3>Economy</h3>
-                                <h3>550</h3>
-                            </div>
-                            -----------------------------------------------------------------------
-                            <div class="flex space-x-2 lg:space-x-36 ">
-                                <h3 class="pl-4">C2</h3>
-                                <h3>Economy</h3>
-                                <h3>550</h3>
-                            </div>
+                            <div id="selected-container"></div>
+
                             <hr>
-                            <div class="flex space-x-2 lg:space-x-[300px] top-14 font-extrabold">
+                            <div class="flex space-x-6 lg:space-x-[320px] top-14 font-extrabold">
                                 <h3 class="pl-3">Total</h3>
-                                <h3>BDT 550</h3>
+                                <h3 id="total-cost">0</h3>
 
                             </div>
-                            <div>
+                            <h3 id="target"></h3>
+                            <div id="coupon-code">
                                 <input class="absolute pl-4 mt-5 ml-0 lg:ml-2 rounded-xl w-[430px]  h-12" type="text" placeholder="have any cupon?">
                                 <button class="btn relative ml-[200px] lg:ml-[350px] mt-5 rounded-2xl w-[90px] h-3 bg-lime-400 text-slate-100">Apply</button>
                             </div>
 
                             <div class="flex space-x-2 lg:space-x-[250px] font-extrabold">
                                 <h3 class="pl-3">Grand-Total</h3>
-                                <h2 class="">BDT 550</h2>
+                                <h2 id="Grand-Total">0</h2>
 
                             </div>
 
@@ -446,11 +437,8 @@
 
             </footer>
             <script src="js/script.js"></script>
-            <script>
-                
-                
-            </script>
-
+            <script src="js/app.js"></script>
+            
 
 
 

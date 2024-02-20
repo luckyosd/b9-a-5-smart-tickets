@@ -1,21 +1,41 @@
- const allbtn = document.getElementsByClassName("add-btn");
- let count = 0;
- for (const btn of allbtn) {
+const allbtn = document.getElementsByClassName("add-btn");
+for (const btn of allbtn) {
+    btn.addEventListener("click", function(event) {
+        console.log(event.target)
 
-     btn.addEventListener("click", function(e) {
+        const selectedContainer = document.getElementById("selected-container");
+        event.target.setAttribute("disabled", false);
+        const div = document.createElement("div");
+        div.classList.add("flex");
+        div.classList.add("justify-around");
+        const p1 = document.createElement("p");
+        const p2 = document.createElement("p");
+        const p3 = document.createElement("p");
+        p1.innerText = "A1";
+        p2.innerText = "Economy";
+        p3.innerText = "550";
+        div.appendChild(p1);
+        div.appendChild(p2);
+        div.appendChild(p3);
+        selectedContainer.appendChild(div);
+        updateTotalCost(550);
+        updateGrandTotal(550);
+    })
+}
 
-         if (count < 4) {
-             count = count + 1;
+function updateTotalCost(target) {
+    const previousTotal = document.getElementById("total-cost").innerText;
+    const convertedTotal = parseInt(previousTotal);
+    const convertedPrice = parseInt(target);
+    const sum = convertedTotal + convertedPrice;
+    document.getElementById("total-cost").innerText = sum;
+}
 
-             document.getElementById("card-count").innerText = count
-             console.log(e.target.parentNode.childNodes)
+function updateGrandTotal(target) {
+    const previousTotal = document.getElementById("Grand-Total").innerText;
+    const convertedTotal = parseInt(previousTotal);
+    const convertedPrice = parseInt(target);
+    const sum = convertedTotal + convertedPrice;
+    document.getElementById("Grand-Total").innerText = sum;
 
-         } else {
-             alert();
-         }
-
-
-     })
-
-
- }
+}

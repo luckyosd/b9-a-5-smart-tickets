@@ -1,10 +1,18 @@
 const allbtn = document.getElementsByClassName("add-btn");
 for (const btn of allbtn) {
     btn.addEventListener("click", function(event) {
+        document.querySelector('.add-btn')
+        btn.style.backgroundColor = 'lime';
+        btn.classList.add("rounded-xl");
+
+
+
         console.log(event.target)
+
 
         const selectedContainer = document.getElementById("selected-container");
         event.target.setAttribute("disabled", false);
+
         const div = document.createElement("div");
         div.classList.add("flex");
         div.classList.add("justify-around");
@@ -20,6 +28,7 @@ for (const btn of allbtn) {
         selectedContainer.appendChild(div);
         updateTotalCost(550);
         updateGrandTotal(550);
+        updateLeftPlayer();
     })
 }
 
@@ -37,5 +46,15 @@ function updateGrandTotal(target) {
     const convertedPrice = parseInt(target);
     const sum = convertedTotal + convertedPrice;
     document.getElementById("Grand-Total").innerText = sum;
+}
 
+
+
+
+
+
+function updateLeftPlayer() {
+    const defaultLeft = document.getElementById("left").innerText;
+    const convertDefaultLeft = parseInt(defaultLeft);
+    document.getElementById("left").innerText = convertDefaultLeft - 1;
 }

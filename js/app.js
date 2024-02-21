@@ -21,3 +21,12 @@ for (const btn of allbtn1) {
 
      
 }
+
+function next() {
+    const homescreen = document.getElementById('home');
+    homescreen.classList.add('hidden');
+    const footerr = document.getElementById('footer');
+    footerr.classList.add('hidden');
+    const homesuccess = document.getElementById('success');
+    homesuccess.classList.remove('hidden');
+}
